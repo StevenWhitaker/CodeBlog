@@ -1,0 +1,30 @@
+\documentclass{report}
+
+\usepackage{bibentry}
+\nobibliography*
+
+\begin{filecontents}{inplace.bib}
+    @ARTICLE{whitaker:20:mwf,
+        author = {Steven T. Whitaker and Gopal Nataraj and Jon-Fredrik Nielsen and Jeffrey A. Fessler},
+        title = {Myelin water fraction estimation using small-tip fast recovery {MRI}},
+        journal = {Mag. Res. Med.},
+        volume = 84,
+        number = 4,
+        pages = {1977--90},
+        month = oct,
+        doi = {10.1002/mrm.28259},
+        year = 2020
+    }
+\end{filecontents}
+
+\begin{document}
+
+    \chapter{First Chapter}
+    This chapter presents my paper \cite{whitaker:20:mwf}.
+
+    \bibentry{whitaker:20:mwf}.
+
+    \bibliographystyle{unsrt}
+    \bibliography{inplace}
+
+\end{document}

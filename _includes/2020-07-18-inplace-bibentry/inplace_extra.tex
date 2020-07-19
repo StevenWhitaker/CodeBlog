@@ -1,0 +1,41 @@
+\documentclass{report}
+
+\usepackage{bibentry}
+\nobibliography*
+
+\input{inplace_extra_input}
+
+\begin{filecontents}{inplace_extra.bib}
+    @ARTICLE{whitaker:20:mwf,
+        author = {Steven T. Whitaker and Gopal Nataraj and Jon-Fredrik Nielsen and Jeffrey A. Fessler},
+        title = {Myelin water fraction estimation using small-tip fast recovery {MRI}},
+        journal = {Mag. Res. Med.},
+        volume = 84,
+        number = 4,
+        pages = {1977--90},
+        month = oct,
+        doi = {10.1002/mrm.28259},
+        year = 2020
+    }
+
+    @CONFERENCE{whitaker:20:mwi,
+        author = {Steven T. Whitaker and Gopal Nataraj and Jon-Fredrik Nielsen and Jeffrey A. Fessler},
+        title = {Myelin water imaging using {STFR} with exchange},
+        booktitle = {Proc. Intl. Soc. Mag. Res. Med.},
+        pages = 1020,
+        year = 2020
+    }
+\end{filecontents}
+
+\begin{document}
+
+    \chapter{First Chapter}
+    This chapter presents my paper \cite{whitaker:20:mwf}
+    and conference abstract \cite{whitaker:20:mwi}.
+
+    \inplacebib{whitaker:20:mwf, whitaker:20:mwi}
+
+    \bibliographystyle{unsrt}
+    \bibliography{inplace_extra}
+
+\end{document}
