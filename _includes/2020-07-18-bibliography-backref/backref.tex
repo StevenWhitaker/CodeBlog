@@ -1,13 +1,11 @@
 \documentclass{report}
 
-\usepackage{lipsum} % For dummy text
-
 \usepackage[pagebackref]{hyperref}
 \hypersetup{colorlinks}
 
 \begin{filecontents}{backref.bib}
     @ARTICLE{whitaker:20:mwf,
-        author = {S. T. Whitaker and G. Nataraj and J-F. Nielsen and J. A. Fessler},
+        author = {Steven T. Whitaker and Gopal Nataraj and Jon-Fredrik Nielsen and Jeffrey A. Fessler},
         title = {Myelin water fraction estimation using small-tip fast recovery {MRI}},
         journal = {Mag. Res. Med.},
         volume = 84,
@@ -22,15 +20,12 @@
 \begin{document}
 
     \chapter{First Chapter}
-    This first chapter contains only a citation to my paper \cite{whitaker:20:mwf}.
+    This chapter contains only a citation to my paper \cite{whitaker:20:mwf}.
     You can click on the citation to go to the bibliography.
     At the end of the bibliography entry
     is a number representing the page number
     on which the reference was cited.
     You can click on it to return to this page.
-
-    \chapter{Second Chapter}
-    \lipsum[1-3]
 
     \bibliographystyle{unsrt}
     \bibliography{backref}
