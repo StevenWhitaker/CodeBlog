@@ -1,0 +1,4 @@
+Sitemap: https://stevenwhitaker.github.io/CodeBlog/sitemap.xml
+
+User-agent: *
+Disallow:
