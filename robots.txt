@@ -1,4 +1,4 @@
-Sitemap: https://tlienart.github.io/FranklinTemplates.jl/sitemap.xml
+Sitemap: https://stevenwhitaker.github.io/CodeBlog/sitemap.xml
 
 User-agent: *
 Disallow:
