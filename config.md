@@ -11,7 +11,7 @@ The website_* must be defined for the RSS to work
 
 @def author = "Steven T. Whitaker"
 
-@def mintoclevel = 2
+@def mintoclevel = 1
 
 <!--
 Add here files or directories that should be ignored by Franklin, otherwise
@@ -26,5 +26,11 @@ pages. It can be math commands but does not need to be.
 For instance:
 * \newcommand{\phrase}{This is a long phrase to copy.}
 -->
-\newcommand{\R}{\mathbb R}
-\newcommand{\scal}[1]{\langle #1 \rangle}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\xhat}{\hat{\mathbf{x}}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\A}{\mathbf{A}}
+
+\newcommand{\argmin}[1]{\text{argmin}_{!#1}\;}
+
+\newcommand{\reals}{\mathbb{R}}
