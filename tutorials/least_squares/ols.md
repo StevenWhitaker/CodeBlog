@@ -71,8 +71,8 @@ Now let's put it all together in code.
 ```julia:./code/fit_quadratic.jl
 function fit_quadratic(t::AbstractVector{<:Real}, y::AbstractVector{<:Real})
     A = [t.^2 t ones(eltype(t), length(t))]
-    (a, b, c) = ols(A, y)
-    return (a, b, c)
+    (â, b̂, ĉ) = ols(A, y)
+    return (â, b̂, ĉ)
 end
 
 using Random
@@ -88,12 +88,13 @@ y = f.(t) .+ 0.01 .* randn(M) # Noisy observations
 Let's see how the estimated parameters compare to the true parameters.
 ```julia:./code/fit_quadratic_show_parameters.jl
 #hideall
-@show (a, b, c)
-@show (â, b̂, ĉ)
+using Printf
+@printf("(a, b, c) = (%0.3f, %0.3f, %0.3f)\n", a, b, c)
+@printf("(â, b̂, ĉ) = (%0.3f, %0.3f, %0.3f)\n", â, b̂, ĉ)
 ```
 \output{./code/fit_quadratic_show_parameters.jl}
 
-Those estimated parameters seem decently close to the true values.
+The estimated parameters agree pretty well with the true values!
 Let's visualize how our quadratic fit compares to the noisy data
 and to the underlying true quadratic curve.
 ```julia:./code/fit_quadratic_plots.jl
@@ -106,3 +107,46 @@ plot!(xlabel = "t", ylabel = "y")
 savefig(joinpath(@OUTPUT, "fit_quadratic.svg")) # hide
 ```
 \fig{./code/output/fit_quadratic}
+
+As expected from how close our estimated parameters
+were to the true parameters,
+our predicted quadratic curve almost exactly coincides
+with the true quadratic curve
+that produced the observed measurements.
+
+# Exercises
+1. Write a function to fit a cubic curve to noisy data.
+   A cubic function has the form $a \cdot t^3 + b \cdot t^2 + c \cdot t + d$.
+   *Hint: It will look very similar to* `fit_quadratic`.
+1. Write a function to fit a polynomial of degree $d$ to noisy data.
+   A polynomial function of degree $d$ has the form $\sum_{i = 0}^d c_i \cdot t^i$.
+   (Comparing to the quadratic case, $d = 2$, $c_2 = a$, $c_1 = b$, and $c_0 = c$.)
+   Allow the caller to specify what degree to use.
+1. Suppose you have the system of equations shown in equation (4) below.
+   Use `ols` to solve this system for $x_1$ and $x_2$.
+   (The solution is $(x_1, x_2) = (1, 2)$.)
+\begin{align}
+x_1 + 2x_2 &= 5 \\
+x_1 + 3x_2 &= 7
+\end{align}
+
+# FAQ
+**Where does $\A$ come from? How do we know what it is?**
+---
+Generally, $\A$ either comes from data, in which case
+finding $\A$ is simply a matter of reading data from a file,
+or $\A$ models a system that transforms inputs $\x$ into outputs $\y$.
+In this latter case,
+determining $\A$ boils down to learning about the system you want to model
+and then converting the physics and/or assumptions
+into matrix form.
+In the quadratic fitting example,
+we had to create $\A$ ourselves,
+and we did so by using our knowledge of quadratic functions
+and how they map inputs to outputs.
+As another example,
+in magnetic resonance imaging (MRI)
+the system matrix $\A$ corresponds to
+the discrete fourier transform (DFT) matrix;
+again, determining $\A$ came from
+understanding MRI physics and then converting it into matrix form.
