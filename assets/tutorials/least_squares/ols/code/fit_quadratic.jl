@@ -1,8 +1,8 @@
 # This file was generated, do not modify it. # hide
 function fit_quadratic(t::AbstractVector{<:Real}, y::AbstractVector{<:Real})
     A = [t.^2 t ones(eltype(t), length(t))]
-    (a, b, c) = ols(A, y)
-    return (a, b, c)
+    (â, b̂, ĉ) = ols(A, y)
+    return (â, b̂, ĉ)
 end
 
 using Random
