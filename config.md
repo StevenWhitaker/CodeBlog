@@ -30,7 +30,9 @@ For instance:
 \newcommand{\xhat}{\hat{\mathbf{x}}}
 \newcommand{\y}{\mathbf{y}}
 \newcommand{\A}{\mathbf{A}}
+\newcommand{\I}{\mathbf{I}}
 
 \newcommand{\argmin}[1]{\text{argmin}_{!#1}\;}
 
 \newcommand{\reals}{\mathbb{R}}
+\newcommand{\zeros}{\mathbf{0}}
