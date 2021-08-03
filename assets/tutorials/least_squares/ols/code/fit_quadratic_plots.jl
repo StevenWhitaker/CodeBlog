@@ -1,5 +1,6 @@
 # This file was generated, do not modify it. # hide
 using Plots
+pyplot()
 f̂(t) = â * t^2 + b̂ * t + ĉ
 scatter(t, y, label = "Observed Data")
 plot!(f, LinRange(0, 1, 101), label = "True Curve", line = (2, :red))
