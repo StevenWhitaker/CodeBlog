@@ -99,6 +99,7 @@ Let's visualize how our quadratic fit compares to the noisy data
 and to the underlying true quadratic curve.
 ```julia:./code/fit_quadratic_plots.jl
 using Plots
+pyplot()
 f̂(t) = â * t^2 + b̂ * t + ĉ
 scatter(t, y, label = "Observed Data")
 plot!(f, LinRange(0, 1, 101), label = "True Curve", line = (2, :red))
