@@ -36,6 +36,9 @@ to the minimizer
 (or a minimizer, if there is more than one)
 of $f$.
 
+## Visualization
+Put a gif here of minimizing a 1D quadratic function.
+
 # GD for (Regularized) Least Squares
 Explain why use GD when one could use pseudoinverse.
 

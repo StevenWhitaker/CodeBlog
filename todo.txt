@@ -1,2 +1,6 @@
 Write tutorial on linear regression:
 linear regression -> ridge regression -> kernel ridge regression
+
+Maybe even point out that polynomial regression
+is a special case of KRR
+(see EECS 545 notes 11_kernels_post.pdf).
